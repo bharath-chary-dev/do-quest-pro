@@ -1,73 +1,95 @@
-# Welcome to your Lovable project
+# To-Do List App – Tasks, Priorities, Deadlines
 
-## Project info
+A beautiful, responsive To‑Do List application built with React, TypeScript, Tailwind, and shadcn‑ui. It features full CRUD, localStorage persistence, nested subtasks, drag‑and‑drop reordering, powerful filters and search, due dates with overdue alerts, dark mode toggle, and JSON import/export. Designed to be clean, modern, and recruiter‑friendly.
 
-**URL**: https://lovable.dev/projects/d904fd2f-b517-4c8a-800e-839bb901b6ab
+- Live demo: https://d904fd2f-b517-4c8a-800e-839bb901b6ab.lovableproject.com
 
-## How can I edit this code?
+## Screenshots
 
-There are several ways of editing your application.
+Light mode
 
-**Use Lovable**
+![Light mode screenshot](src/assets/todo-screenshot-light.jpg)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d904fd2f-b517-4c8a-800e-839bb901b6ab) and start prompting.
+Dark mode
 
-Changes made via Lovable will be committed automatically to this repo.
+![Dark mode screenshot](src/assets/todo-screenshot-dark.jpg)
 
-**Use your preferred IDE**
+## Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Full CRUD with localStorage persistence
+- Nested subtasks (multi-level)
+- Drag-and-drop reordering (tasks and subtasks)
+- Prioritization (Low, Medium, High) with priority badges
+- Due dates with visual overdue alerts
+- Filter by status (All, Active, Completed, Overdue) and by priority
+- Search by task title
+- Sorting (Manual, Created, Due date, Priority, Title)
+- JSON Import/Export for backup or migration
+- Dark mode toggle with system preference detection
+- Smooth animations and micro‑interactions
+- Mobile‑first, responsive design
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Tech Stack
 
-Follow these steps:
+- React + Vite + TypeScript
+- Tailwind CSS with semantic tokens
+- shadcn‑ui components
+- @dnd-kit for drag and drop
+- react-helmet-async for SEO
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Getting Started
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. Install dependencies
 
-# Step 3: Install the necessary dependencies.
+```bash
 npm i
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+2. Run the development server
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+3. Open the app
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Visit the printed local URL. Changes update live.
 
-**Use GitHub Codespaces**
+## Usage
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Add a task via the top form; optionally set due date and priority
+- Click task title to edit inline
+- Check the box to complete a task
+- Use the handle to drag and reorder
+- Add subtasks via the + button on a task
+- Filter, search, and sort from the toolbar
+- Export to JSON (backup) or Import a JSON file to restore
+- Toggle dark mode via the sun/moon button in the header
 
-## What technologies are used for this project?
+## Project Structure (key parts)
 
-This project is built with:
+- src/features/todo/types.ts – Task types
+- src/features/todo/storage.ts – localStorage load/save
+- src/features/todo/TodoApp.tsx – App logic, filters, import/export
+- src/features/todo/TaskTree.tsx – Recursive task list with DnD
+- src/components/ThemeToggle.tsx – Dark mode toggle
+- src/pages/Index.tsx – Page shell, SEO, app embedding
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## SEO
 
-## How can I deploy this project?
+- Title and meta description on the Index page
+- Canonical link to avoid duplicates
+- Semantic HTML structure (header, main)
 
-Simply open [Lovable](https://lovable.dev/projects/d904fd2f-b517-4c8a-800e-839bb901b6ab) and click on Share -> Publish.
+## Future Improvements
 
-## Can I connect a custom domain to my Lovable project?
+- Reminders/notifications
+- Inline rich text notes per task
+- Bulk actions and multi‑select
+- Keyboard shortcuts
+- Cloud sync and auth (Supabase)
+- Attachments via file uploads
 
-Yes, you can!
+## License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT
